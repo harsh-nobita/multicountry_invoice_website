@@ -1,0 +1,66 @@
+/* ============================================
+   INVOICEFORGE – PRINT STYLES
+   print.css (media="print")
+   ============================================ */
+
+@media print {
+  /* Hide UI chrome */
+  .site-header,
+  .hero,
+  .settings-bar,
+  .action-bar,
+  .ad-banner,
+  .ad-sidebar,
+  .inv-options-row,
+  .add-item-btn,
+  .del-btn,
+  .opt-toggle,
+  .features-section,
+  .faq-section,
+  .site-footer,
+  .toast,
+  .inv-stamp { display: none !important; }
+
+  body {
+    background: #fff !important;
+    font-size: 12pt;
+    color: #000;
+  }
+  .app-layout {
+    display: block !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  .editor-panel { width: 100% !important; }
+  .invoice-wrapper { margin: 0 !important; }
+  .invoice-paper {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+  .invoice-paper::before { display: none; }
+
+  /* Editable fields look clean when printed */
+  .editable {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .meta-input,
+  .notes-box,
+  .inv-table td input { border: none !important; background: transparent !important; }
+
+  /* Table */
+  .inv-table { page-break-inside: auto; }
+  .inv-table tr { page-break-inside: avoid; page-break-after: auto; }
+  .inv-table-head { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .balance-due { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  @page {
+    margin: 18mm 20mm;
+    size: A4;
+  }
+}
