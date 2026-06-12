@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Invoice Guide & Blog – GST, VAT, PDF Tips | make-free-invoice.com</title>
+  <meta name="description" content="Learn how to create professional invoices, understand tax systems like GST and VAT, and get paid faster. Free invoicing guides for freelancers and small businesses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero {
+      background: linear-gradient(135deg, #1a3c5e 0%, #2a5f8f 100%);
+      color: #fff;
+      padding: 56px 24px;
+      text-align: center;
+    }
+    .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 12px; }
+    .blog-hero p { opacity: .85; font-size: 16px; max-width: 560px; margin: 0 auto; }
+
+    .blog-layout {
+      max-width: 1100px;
+      margin: 48px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Articles */
+    .article-list { display: flex; flex-direction: column; gap: 32px; }
+    .article-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .article-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.10); }
+    .article-thumb {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+    .article-body { padding: 24px; }
+    .article-tag {
+      display: inline-block;
+      background: #e8eef5;
+      color: #1a3c5e;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      padding: 3px 10px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+    }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1c1c1e;
+      line-height: 1.3;
+    }
+    .article-body p { font-size: 14px; color: #4b5563; line-height: 1.75; margin-bottom: 16px; }
+    .article-meta { font-size: 12px; color: #9ca3af; margin-bottom: 14px; }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #1a3c5e;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: gap .2s;
+    }
+    .read-more:hover { gap: 10px; }
+
+    /* Sidebar */
+    .blog-sidebar { display: flex; flex-direction: column; gap: 24px; }
+    .sidebar-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 22px;
+    }
+    .sidebar-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: #1a3c5e; }
+    .sidebar-links { display: flex; flex-direction: column; gap: 10px; }
+    .sidebar-links a {
+      font-size: 13px;
+      color: #374151;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f3f4f6;
+      transition: color .15s;
+    }
+    .sidebar-links a:last-child { border-bottom: none; }
+    .sidebar-links a:hover { color: #1a3c5e; }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-pill {
+      background: #f3f4f6;
+      color: #374151;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 99px;
+      text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+    .tag-pill:hover { background: #1a3c5e; color: #fff; }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, #1a3c5e, #2a5f8f);
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .sidebar-cta h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .sidebar-cta p { font-size: 13px; opacity: .85; margin-bottom: 16px; line-height: 1.6; }
+    .sidebar-cta a {
+      display: inline-block;
+      background: #fff;
+      color: #1a3c5e;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .sidebar-cta a:hover { opacity: .9; }
+
+    @media (max-width: 768px) {
+      .blog-layout { grid-template-columns: 1fr; }
+    }
+
+    /* Inline article full text (expandable) */
+    .article-full { display: none; padding: 0 24px 24px; }
+    .article-full.open { display: block; }
+    .article-full h3 { font-size: 16px; font-weight: 700; margin: 20px 0 8px; color: #1a3c5e; }
+    .article-full p { font-size: 14px; color: #4b5563; line-height: 1.8; margin-bottom: 12px; }
+    .article-full ul { padding-left: 20px; margin-bottom: 12px; }
+    .article-full li { font-size: 14px; color: #4b5563; line-height: 1.8; }
+    .article-full table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+    .article-full th { background: #1a3c5e; color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; }
+    .article-full td { padding: 9px 12px; border-bottom: 1px solid #f0f0f0; color: #374151; }
+    .article-full tr:nth-child(even) td { background: #fafbfc; }
+    .collapse-btn {
+      background: none;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 12px;
+      color: #6b7280;
+      cursor: pointer;
+      margin-top: 12px;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .collapse-btn:hover { border-color: #1a3c5e; color: #1a3c5e; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">⬡</span>
+        <span class="logo-text">Make Free <strong>Invoice</strong></span>
+      </a>
+      <nav class="header-nav">
+        <a href="templates.html">Templates</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="header-actions">
+        <a href="../index.html" class="btn-primary">Create Invoice</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Top Ad -->
+  <div class="ad-banner ad-top">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="7890123456" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="blog-hero">
+    <h1>Invoice Guide & Resources</h1>
+    <p>Everything you need to know about invoicing, taxes, and getting paid faster.</p>
+  </div>
+
+  <div class="blog-layout">
+
+    <!-- ARTICLES -->
+    <div class="article-list">
+
+      <!-- Article 1 -->
+      <article class="article-card">
+        <div class="article-thumb" style="background: #e8f4fd;">📋</div>
+        <div class="article-body">
+          <span class="article-tag">Invoicing Basics</span>
+          <div class="article-meta">June 2024 · 6 min read</div>
+          <h2>What Is an Invoice? Everything Freelancers Need to Know</h2>
+          <p>An invoice is a legally binding document that requests payment for goods or services provided. Learn the essential elements every invoice must contain and common mistakes to avoid.</p>
+          <a href="javascript:void(0)" class="read-more" onclick="toggleArticle('art1')">Read article →</a>
+        </div>
+        <div class="article-full" id="art1">
+          <h3>What Must an Invoice Include?</h3>
+          <p>A professional invoice should contain the following elements to be legally valid and ensure prompt payment:</p>
+          <ul>
+            <li><strong>Invoice number</strong> – a unique identifier for tracking and accounting purposes.</li>
+            <li><strong>Issue date and due date</strong> – when the invoice was created and when payment is expected.</li>
+            <li><strong>Seller details</strong> – your full name or business name, address, and contact information.</li>
+            <li><strong>Buyer details</strong> – your client's name, company, and billing address.</li>
+            <li><strong>Description of goods or services</strong> – clear, itemized breakdown of what was delivered.</li>
+            <li><strong>Amounts</strong> – unit price, quantity, subtotal, taxes, and grand total.</li>
+            <li><strong>Payment terms</strong> – how and when to pay (bank transfer, PayPal, net-30, etc.).</li>
+            <li><strong>Tax information</strong> – your GST/VAT registration number if applicable.</li>
+          </ul>
+          <h3>Invoice vs. Receipt vs. Quote</h3>
+          <p>An <strong>invoice</strong> requests payment before or after work. A <strong>receipt</strong> confirms payment was received. A <strong>quote</strong> (or estimate) proposes the cost before work begins. All three are different documents.</p>
+          <h3>Payment Terms to Know</h3>
+          <table>
+            <tr><th>Term</th><th>Meaning</th></tr>
+            <tr><td>Net 15</td><td>Payment due within 15 days of invoice date</td></tr>
+            <tr><td>Net 30</td><td>Payment due within 30 days</td></tr>
+            <tr><td>Due on Receipt</td><td>Payment expected immediately</td></tr>
+            <tr><td>2/10 Net 30</td><td>2% discount if paid within 10 days, otherwise due in 30</td></tr>
+          </table>
+          <button class="collapse-btn" onclick="toggleArticle('art1')">↑ Collapse</button>
+        </div>
+      </article>
+
+      <!-- Mid-article Ad -->
+      <div class="ad-banner" style="border-radius:12px; overflow:hidden; border:1px solid #e5e7eb;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="8901234567" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- Article 2 -->
+      <article class="article-card">
+        <div class="article-thumb" style="background: #f0fdf4;">🌍</div>
+        <div class="article-body">
+          <span class="article-tag">Tax Guide</span>
+          <div class="article-meta">May 2024 · 8 min read</div>
+          <h2>GST vs VAT vs Sales Tax: What's the Difference?</h2>
+          <p>Confused about international tax systems? This guide breaks down the major tax systems used around the world and when you need to charge them on your invoices.</p>
+          <a href="javascript:void(0)" class="read-more" onclick="toggleArticle('art2')">Read article →</a>
+        </div>
+        <div class="article-full" id="art2">
+          <h3>The Three Major Tax System Types</h3>
+          <p>Most countries use one of three broad tax frameworks for business transactions:</p>
+          <table>
+            <tr><th>System</th><th>Countries</th><th>Typical Rate</th><th>Notes</th></tr>
+            <tr><td><strong>VAT</strong> (Value Added Tax)</td><td>EU, UK, UAE, South Africa, Russia</td><td>5–25%</td><td>Applied at each stage of production</td></tr>
+            <tr><td><strong>GST</strong> (Goods &amp; Services Tax)</td><td>Australia, India, Canada, NZ, Singapore</td><td>5–18%</td><td>Similar to VAT; may have federal + state components</td></tr>
+            <tr><td><strong>Sales Tax</strong></td><td>United States</td><td>0–10.25%</td><td>Applied only at point of sale; varies by state</td></tr>
+          </table>
+          <h3>India's GST: CGST + SGST + IGST</h3>
+          <p>India has a dual GST structure. For sales within the same state, you charge <strong>CGST</strong> (Central GST) + <strong>SGST</strong> (State GST), both at half the applicable rate. For inter-state sales, you charge <strong>IGST</strong> (Integrated GST) at the full rate. Common rates are 0%, 5%, 12%, 18%, and 28%.</p>
+          <h3>Canada's GST/HST/PST</h3>
+          <p>Canada uses federal <strong>GST</strong> (5%) plus provincial taxes. Some provinces harmonize these into a single <strong>HST</strong>. Others have separate <strong>PST</strong> or <strong>QST</strong> (Quebec). Ontario charges 13% HST; Nova Scotia 15% HST; BC charges 5% GST + 7% PST.</p>
+          <h3>When Do You Need to Register?</h3>
+          <p>Most countries have a registration threshold. In Australia, you must register for GST once you earn over AUD $75,000/year. In the UK, it's £90,000. In India, it's ₹20–40 lakh depending on the state. Below the threshold, you typically don't need to charge or collect tax.</p>
+          <button class="collapse-btn" onclick="toggleArticle('art2')">↑ Collapse</button>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="article-card">
+        <div class="article-thumb" style="background: #fdf4ff;">💸</div>
+        <div class="article-body">
+          <span class="article-tag">Get Paid Faster</span>
+          <div class="article-meta">April 2024 · 5 min read</div>
+          <h2>10 Proven Tips to Get Invoices Paid on Time</h2>
+          <p>Late payments are a freelancer's biggest frustration. Here are proven strategies to reduce payment delays and protect your cash flow.</p>
+          <a href="javascript:void(0)" class="read-more" onclick="toggleArticle('art3')">Read article →</a>
+        </div>
+        <div class="article-full" id="art3">
+          <ul>
+            <li><strong>Invoice immediately</strong> – Send the invoice the same day you complete the work. Delays on your end encourage delays on theirs.</li>
+            <li><strong>Use clear due dates</strong> – "Net 30" is less urgent than "Due by June 30, 2024". Be explicit.</li>
+            <li><strong>Request a deposit upfront</strong> – For large projects, ask for 25–50% before starting. This filters out unreliable clients.</li>
+            <li><strong>Accept multiple payment methods</strong> – Bank transfer, PayPal, Stripe, UPI — the easier you make it to pay, the faster you get paid.</li>
+            <li><strong>Include bank details on the invoice</strong> – Never make clients ask where to send the money.</li>
+            <li><strong>Follow up automatically</strong> – Send a polite reminder 3 days before the due date and 1 day after.</li>
+            <li><strong>Charge late fees</strong> – State a 1.5–2% monthly late fee in your terms. Even if you never enforce it, the threat works.</li>
+            <li><strong>Keep invoices simple</strong> – Confusing invoices get questioned and delayed. Be clear and itemized.</li>
+            <li><strong>Build a relationship</strong> – Clients pay people they like faster. A brief thank-you note goes a long way.</li>
+            <li><strong>Use invoice numbers</strong> – Makes it easier for clients' accounting teams to process and track your payment.</li>
+          </ul>
+          <button class="collapse-btn" onclick="toggleArticle('art3')">↑ Collapse</button>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="article-card">
+        <div class="article-thumb" style="background: #fff7ed;">🔢</div>
+        <div class="article-body">
+          <span class="article-tag">Invoicing Tips</span>
+          <div class="article-meta">March 2024 · 4 min read</div>
+          <h2>How to Number Your Invoices (Best Practices)</h2>
+          <p>A good invoice numbering system keeps your accounting organized, looks professional, and is required by tax authorities in most countries. Here's how to do it right.</p>
+          <a href="javascript:void(0)" class="read-more" onclick="toggleArticle('art4')">Read article →</a>
+        </div>
+        <div class="article-full" id="art4">
+          <h3>Why Invoice Numbers Matter</h3>
+          <p>Invoice numbers are required by tax law in most countries. They allow you and your client to uniquely identify, reference, and audit transactions. Using sequential numbers also makes it easy to spot gaps (lost or disputed invoices).</p>
+          <h3>Popular Numbering Formats</h3>
+          <table>
+            <tr><th>Format</th><th>Example</th><th>Best For</th></tr>
+            <tr><td>Sequential</td><td>INV-001, INV-002</td><td>Startups &amp; freelancers</td></tr>
+            <tr><td>Year + Sequential</td><td>2024-001, 2024-002</td><td>Annual reset tracking</td></tr>
+            <tr><td>Year + Month + Seq</td><td>2024-06-001</td><td>High-volume businesses</td></tr>
+            <tr><td>Client Code + Seq</td><td>APPLE-001, MSFT-002</td><td>Multi-client agencies</td></tr>
+            <tr><td>Project Code</td><td>PROJ-001-INV-1</td><td>Project-based billing</td></tr>
+          </table>
+          <h3>Rules to Follow</h3>
+          <ul>
+            <li>Invoice numbers must be <strong>unique</strong> — never reuse a number.</li>
+            <li>They must be <strong>sequential</strong> with no gaps (for tax audit compliance).</li>
+            <li>In many countries (EU, Australia, India) the numbering must be <strong>chronological</strong>.</li>
+            <li>Do not use special characters except hyphens and underscores.</li>
+          </ul>
+          <button class="collapse-btn" onclick="toggleArticle('art4')">↑ Collapse</button>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="article-card">
+        <div class="article-thumb" style="background: #f0f9ff;">🏢</div>
+        <div class="article-body">
+          <span class="article-tag">Business Guide</span>
+          <div class="article-meta">February 2024 · 7 min read</div>
+          <h2>Sole Trader vs. Company: How It Affects Your Invoicing</h2>
+          <p>Whether you're a sole trader, partnership, or registered company affects what must appear on your invoices, your tax obligations, and liability. Here's a country-by-country breakdown.</p>
+          <a href="javascript:void(0)" class="read-more" onclick="toggleArticle('art5')">Read article →</a>
+        </div>
+        <div class="article-full" id="art5">
+          <h3>Sole Trader Invoicing</h3>
+          <p>As a sole trader, your invoices must include your full legal name (not just a trade name) in most countries. In Australia, you should include your ABN. In the UK, you don't need to register for VAT unless you exceed the £90,000 threshold.</p>
+          <h3>Company Invoicing Requirements</h3>
+          <p>Registered companies typically have stricter requirements. In the UK, a limited company must show its registered company number and registered office address. In India, a Private Limited company must include its CIN. In the EU, VAT-registered businesses must show their VAT number on all B2B invoices.</p>
+          <h3>Key Differences by Country</h3>
+          <table>
+            <tr><th>Country</th><th>Sole Trader Must Show</th><th>Company Must Show</th></tr>
+            <tr><td>Australia</td><td>Name + ABN</td><td>ACN + ABN + Registered Address</td></tr>
+            <tr><td>UK</td><td>Full Name (if VAT-registered: VAT No.)</td><td>Company No. + Registered Address</td></tr>
+            <tr><td>India</td><td>PAN + GSTIN</td><td>CIN + GSTIN + PAN</td></tr>
+            <tr><td>USA</td><td>Name/DBA + EIN (if applicable)</td><td>EIN + State Registration</td></tr>
+            <tr><td>Germany</td><td>Name + USt-IdNr (if VAT registered)</td><td>HRB No. + USt-IdNr</td></tr>
+          </table>
+          <button class="collapse-btn" onclick="toggleArticle('art5')">↑ Collapse</button>
+        </div>
+      </article>
+
+    </div><!-- /.article-list -->
+
+    <!-- SIDEBAR -->
+    <aside class="blog-sidebar">
+
+      <!-- Sidebar Ad -->
+      <div class="sidebar-card" style="padding:8px; border:none;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="9012345678" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="sidebar-card">
+        <h3>📚 Popular Guides</h3>
+        <div class="sidebar-links">
+          <a href="tax-guide.html">🌍 International Tax Guide</a>
+          <a href="faq.html">❓ Invoice FAQ</a>
+          <a href="how-it-works.html">⚡ How Make Free Invoice Works</a>
+          <a href="templates.html">📄 Invoice Templates</a>
+          <a href="../index.html">✏️ Create Invoice Now</a>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div class="sidebar-card">
+        <h3>🏷️ Topics</h3>
+        <div class="tag-cloud">
+          <a href="#" class="tag-pill">GST</a>
+          <a href="#" class="tag-pill">VAT</a>
+          <a href="#" class="tag-pill">HST</a>
+          <a href="#" class="tag-pill">Freelancing</a>
+          <a href="#" class="tag-pill">PDF Invoice</a>
+          <a href="#" class="tag-pill">India</a>
+          <a href="#" class="tag-pill">Australia</a>
+          <a href="#" class="tag-pill">Canada</a>
+          <a href="#" class="tag-pill">UK</a>
+          <a href="#" class="tag-pill">Small Business</a>
+          <a href="#" class="tag-pill">Payment Terms</a>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="sidebar-cta">
+        <h3>Ready to invoice?</h3>
+        <p>Create a professional, tax-compliant invoice in under 2 minutes. No sign-up. No watermark.</p>
+        <a href="../index.html">Create Free Invoice →</a>
+      </div>
+
+      <!-- Second Sidebar Ad -->
+      <div class="sidebar-card" style="padding:8px; border:none;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="0123456789" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+    </aside>
+
+  </div><!-- /.blog-layout -->
+
+  <!-- Bottom Ad -->
+  <div class="ad-banner ad-mid">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="1234509876" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">⬡</span>
+        <span class="logo-text">Make Free <strong>Invoice</strong></span>
+        <p>Free professional invoice generator for freelancers and small businesses worldwide.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="../index.html">Invoice Generator</a>
+          <a href="templates.html">Templates</a>
+          <a href="how-it-works.html">How It Works</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="blog.html">Blog</a>
+          <a href="tax-guide.html">Tax Guide</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 make-free-invoice.com. Built for freelancers worldwide.</p></div>
+  </footer>
+
+  <script>
+    function toggleArticle(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
