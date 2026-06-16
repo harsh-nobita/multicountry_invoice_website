@@ -1,0 +1,123 @@
+/* ============================================
+   PRINT STYLES — print.css (media="print")
+   Only the invoice document prints.
+   ============================================ */
+
+@media print {
+
+  /* ── HIDE EVERYTHING except the invoice ───── */
+  body > *:not(.app-layout),
+  .site-header,
+  .hero-wrap,
+  .stats-bar,
+  .ad-leaderboard,
+  .ad-rectangle,
+  .ad-slot,
+  .ad-label,
+  .ad-sidebar-wrap,
+  .settings-bar,
+  .action-bar,
+  .inv-options-row,
+  .add-item-btn,
+  .del-btn,
+  .opt-toggle,
+  .col-del,
+  .features-section,
+  .geo-section,
+  .social-section,
+  .faq-section,
+  .site-footer,
+  .toast,
+  .inv-stamp,
+  .dashboard-panel,
+  .auth-overlay,
+  .user-dropdown,
+  .lang-dropdown,
+  #langSwitcherArea,
+  #headerAuthArea,
+  .burger-btn,
+  .geo-detect-bar,
+  .geo-badge,
+  ins.adsbygoogle { display: none !important; }
+
+  html, body {
+    background: #ffffff !important;
+    font-size: 11pt;
+    color: #000000;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Force the layout to be single-column invoice only */
+  .app-layout {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    gap: 0 !important;
+  }
+  .editor-panel {
+    width: 100% !important;
+    flex: none !important;
+    max-width: 100% !important;
+  }
+  .invoice-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .invoice-paper {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 16mm 16mm !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .invoice-paper::before { display: none !important; }
+
+  /* Make editable fields print like static text */
+  .editable {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: default !important;
+  }
+  /* Hide placeholder text in empty fields */
+  .editable:empty::before { content: none !important; }
+  .editable[data-placeholder]:empty::before { content: none !important; }
+
+  /* Make input fields and selects look like text */
+  input, select, textarea {
+    border: none !important;
+    background: transparent !important;
+    -webkit-appearance: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none !important; }
+
+  /* Invoice table */
+  .inv-table { page-break-inside: auto; width: 100%; }
+  .inv-table tr { page-break-inside: avoid; page-break-after: auto; }
+
+  /* Force background colors to print (for navy table header) */
+  .inv-table-head,
+  .balance-due {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Footer grid — keep side by side */
+  .inv-footer-grid { grid-template-columns: 1fr 280px !important; }
+
+  @page {
+    margin: 12mm 14mm;
+    size: A4;
+  }
+}
