@@ -32,13 +32,14 @@
 */
 
 // ⬇️ REPLACE THIS WITH YOUR FIREBASE CONFIG
-const FIREBASE_CONFIG = {
-  apiKey:            "YOUR_API_KEY",
-  authDomain:        "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId:         "YOUR_PROJECT_ID",
-  storageBucket:     "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId:             "YOUR_APP_ID"
+const firebaseConfig = {
+  apiKey: "AIzaSyBhfBmaIJkd56RSmBwOpRL4dm39DGZ1paw",
+  authDomain: "make-free-invoice-3f9f8.firebaseapp.com",
+  projectId: "make-free-invoice-3f9f8",
+  storageBucket: "make-free-invoice-3f9f8.firebasestorage.app",
+  messagingSenderId: "618961078630",
+  appId: "1:618961078630:web:80a2ef2749350af63760a7",
+  measurementId: "G-6CJ1DXN6N8"
 };
 
 // The URL users are redirected to after clicking magic link email
